@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:My_Summer_Backup"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="My Summer Backup" Width="600">
     <Grid>
-        
+        <Button x:Name="createBackupButton" Content="Create Backup" Margin="6,18,0,0" VerticalAlignment="Top" Width="106" Height="26" HorizontalAlignment="Left"/>
+        <TextBox x:Name="fileNameTextBox" Height="26" Margin="132,18,6,0" TextWrapping="Wrap" Text="Backup File Name" VerticalAlignment="Top"/>
+        <Button x:Name="loadBackupButton" Content="Load Backup" HorizontalAlignment="Left" Margin="6,83,0,0" VerticalAlignment="Top" Width="106" Height="26"/>
+        <ListBox x:Name="fileNameListBox" Margin="6,125,6,6" VerticalContentAlignment="Top">
+            <ListBoxItem Content="Saved Game 1" Height="21"/>
+        </ListBox>
     </Grid>
 </Window>

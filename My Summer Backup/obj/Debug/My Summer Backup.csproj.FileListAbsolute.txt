@@ -1,0 +1,14 @@
+C:\Users\mbig\Desktop\GIT REPOS\My-Summer-Backup\My Summer Backup\bin\Debug\My Summer Backup.exe.config
+C:\Users\mbig\Desktop\GIT REPOS\My-Summer-Backup\My Summer Backup\bin\Debug\My Summer Backup.exe
+C:\Users\mbig\Desktop\GIT REPOS\My-Summer-Backup\My Summer Backup\bin\Debug\My Summer Backup.pdb
+C:\Users\mbig\Desktop\GIT REPOS\My-Summer-Backup\My Summer Backup\obj\Debug\My Summer Backup.csprojResolveAssemblyReference.cache
+C:\Users\mbig\Desktop\GIT REPOS\My-Summer-Backup\My Summer Backup\obj\Debug\MainWindow.g.cs
+C:\Users\mbig\Desktop\GIT REPOS\My-Summer-Backup\My Summer Backup\obj\Debug\App.g.cs
+C:\Users\mbig\Desktop\GIT REPOS\My-Summer-Backup\My Summer Backup\obj\Debug\My Summer Backup_MarkupCompile.cache
+C:\Users\mbig\Desktop\GIT REPOS\My-Summer-Backup\My Summer Backup\obj\Debug\My Summer Backup_MarkupCompile.lref
+C:\Users\mbig\Desktop\GIT REPOS\My-Summer-Backup\My Summer Backup\obj\Debug\MainWindow.baml
+C:\Users\mbig\Desktop\GIT REPOS\My-Summer-Backup\My Summer Backup\obj\Debug\My Summer Backup.g.resources
+C:\Users\mbig\Desktop\GIT REPOS\My-Summer-Backup\My Summer Backup\obj\Debug\My_Summer_Backup.Properties.Resources.resources
+C:\Users\mbig\Desktop\GIT REPOS\My-Summer-Backup\My Summer Backup\obj\Debug\My Summer Backup.csproj.GenerateResource.Cache
+C:\Users\mbig\Desktop\GIT REPOS\My-Summer-Backup\My Summer Backup\obj\Debug\My Summer Backup.exe
+C:\Users\mbig\Desktop\GIT REPOS\My-Summer-Backup\My Summer Backup\obj\Debug\My Summer Backup.pdb
