@@ -8,10 +8,11 @@
         Title="My Summer Backup" Width="600">
     <Grid>
         <Button x:Name="createBackupButton" Content="Create Backup" Margin="6,18,0,0" VerticalAlignment="Top" Width="106" Height="26" HorizontalAlignment="Left" Cursor="Hand" Click="createBackup"/>
-        <TextBox x:Name="fileNameTextBox" Height="26" Margin="132,18,6,0" TextWrapping="Wrap" Text="Backup File Name" VerticalAlignment="Top"/>
-        <Button x:Name="loadBackupButton" Content="Load Backup" HorizontalAlignment="Left" Margin="6,83,0,0" VerticalAlignment="Top" Width="106" Height="26" Cursor="Hand"/>
+        <TextBox x:Name="fileNameTextBox" Height="26" Margin="132,18,5.6,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <Button x:Name="loadBackupButton" Content="Load Backup" HorizontalAlignment="Left" Margin="6,83,0,0" VerticalAlignment="Top" Width="106" Height="26" Cursor="Hand" Click="loadBackup"/>
         <ListBox x:Name="fileNameListBox" Margin="6,125,6,6" VerticalContentAlignment="Top">
-            <ListBoxItem Content="Saved Game 1" Height="21" Cursor="Hand"/>
+            <ListBoxItem Content="No Backups Found" Height="21" Cursor="Hand"/>
         </ListBox>
+        <TextBox x:Name="backupStatusTextBox" Height="26" Margin="132,85,5.6,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
     </Grid>
 </Window>

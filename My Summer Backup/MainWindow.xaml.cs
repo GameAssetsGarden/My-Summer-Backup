@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,13 +24,54 @@ namespace My_Summer_Backup{
         public MainWindow(){
 
             InitializeComponent();
+            updateBackupList(); // Update the list of backup folders on program load.
+        }
+
+        private void createBackup( object sender, RoutedEventArgs e ){
+
+            string backupFolderName = fileNameTextBox.Text;
+
+            FileManager.CopyDirectory( FileManager.gameDataDirectory, FileManager.backupDirectory + backupFolderName, FileManager.LEAVE_SUBDIRS, FileManager.OVERWRITE_FILES );
+            updateBackupList();
 
         }
 
-        private void createBackup( object sender, RoutedEventArgs e ) {
+        private void loadBackup( object sender, RoutedEventArgs e ) {
 
-            FileManager.CopyDirectory( FileManager.gameDataDirectory, FileManager.backupDirectory, FileManager.COPY_SUBDIRS, FileManager.OVERWRITE_FILES );
+            // Determine if a list item is selected.
+            if( fileNameListBox.SelectedIndex != -1 ){
 
+                if( Regex.IsMatch( (string)fileNameListBox.SelectedValue, FileManager.NO_BACKUPS_FOUND ) ){
+
+                    backupStatusTextBox.Text = FileManager.SELECT_BACKUP_MSG;
+
+                }else if( Regex.IsMatch( (string)fileNameListBox.SelectedValue, FileManager.SELECT_BACKUP ) ){
+
+                    backupStatusTextBox.Text = FileManager.SELECT_BACKUP_MSG;
+
+                }else{
+
+                    FileManager.CopyDirectory( FileManager.backupDirectory + fileNameListBox.SelectedValue, FileManager.gameDataDirectory, FileManager.LEAVE_SUBDIRS, FileManager.OVERWRITE_FILES );
+                    backupStatusTextBox.Text = fileNameListBox.SelectedValue + FileManager.BACKUP_LOADED_MSG;
+                }
+
+            }else{
+
+                backupStatusTextBox.Text = FileManager.SELECT_BACKUP_MSG;
+
+            }
+        }
+
+        private void updateBackupList() {
+
+            string[] backupFolderList = FileManager.GetBackupFolderList();
+            int numBackups = backupFolderList.Length;
+
+            fileNameListBox.Items.Clear(); // Clear backup list.
+
+            for( int i = 0; i < numBackups; i++ ) {
+                fileNameListBox.Items.Add( backupFolderList[i] );
+            }
         }
     }
 
