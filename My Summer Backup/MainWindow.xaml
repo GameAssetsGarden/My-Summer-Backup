@@ -5,14 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:My_Summer_Backup"
         mc:Ignorable="d"
-        Title="My Summer Backup" Width="600">
+        Title="My Summer Backup" Width="600" d:DesignHeight="681.6">
     <Grid>
-        <Button x:Name="createBackupButton" Content="Create Backup" Margin="6,18,0,0" VerticalAlignment="Top" Width="106" Height="26" HorizontalAlignment="Left" Cursor="Hand" Click="createBackup"/>
-        <TextBox x:Name="fileNameTextBox" Height="26" Margin="132,18,5.6,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <Button x:Name="loadBackupButton" Content="Load Backup" HorizontalAlignment="Left" Margin="6,83,0,0" VerticalAlignment="Top" Width="106" Height="26" Cursor="Hand" Click="loadBackup"/>
-        <ListBox x:Name="fileNameListBox" Margin="6,125,6,6" VerticalContentAlignment="Top">
+        <Button x:Name="openMySummerCarFolderButton" Content="Open My Summer Car Folder" Margin="6,10,0,0" VerticalAlignment="Top" Width="184" Height="26" HorizontalAlignment="Left" Cursor="Hand" Click="openMySummerCarFolder"/>
+        <Button x:Name="openBackupFolderButton" Content="Open Backup Folder" Margin="210,10,0,0" VerticalAlignment="Top" Width="136" Height="26" HorizontalAlignment="Left" Cursor="Hand" Click="openBackupFolder"/>
+        <Button x:Name="createBackupButton" Content="Create Backup" Margin="6,58,0,0" VerticalAlignment="Top" Width="106" Height="26" HorizontalAlignment="Left" Cursor="Hand" Click="createBackup"/>
+        <TextBox x:Name="fileNameTextBox" Height="26" Margin="132,58,5.6,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <Button x:Name="loadBackupButton" Content="Load Backup" HorizontalAlignment="Left" Margin="6,107,0,0" VerticalAlignment="Top" Width="106" Height="26" Cursor="Hand" Click="loadBackup"/>
+        <ListBox x:Name="fileNameListBox" Margin="6,160,5.6,5.6" VerticalContentAlignment="Top">
             <ListBoxItem Content="No Backups Found" Height="21" Cursor="Hand"/>
         </ListBox>
-        <TextBox x:Name="backupStatusTextBox" Height="26" Margin="132,85,5.6,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBox x:Name="backupStatusTextBox" Height="26" Margin="132,109,5.6,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
     </Grid>
 </Window>

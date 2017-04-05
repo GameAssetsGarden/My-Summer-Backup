@@ -14,6 +14,7 @@ namespace My_Summer_Backup{
         public static string gameDataDirectory = @"%USERPROFILE%\AppData\LocalLow\Amistech\My Summer Car";
         public static string backupDirectory   = @"My Summer Backups\";
         public static string NO_BACKUPS_FOUND  = "No Backups Found";
+        public static string DIR_NOT_FOUND     = "The selected folder could not be found.";
         public static string SELECT_BACKUP     = "Select Backup Folder";
         public static string SELECT_BACKUP_MSG = "Select a backup folder first.";
         public static string BACKUP_LOADED_MSG = " has been loaded."; // Append backup folder name to the beginning of this string.
@@ -23,6 +24,26 @@ namespace My_Summer_Backup{
 
             string fullPath = Environment.ExpandEnvironmentVariables( initialPath );
             return fullPath;
+
+        }
+
+        public static void OpenDirectory( string directoryPath ){
+
+            directoryPath = ExpandPath( directoryPath );
+
+            DirectoryInfo requestedDirectoryInfo = new DirectoryInfo( directoryPath );
+
+            if( !requestedDirectoryInfo.Exists ){
+
+                // Send error message.
+                System.Windows.MessageBox.Show( DIR_NOT_FOUND );
+
+            } else{
+
+                // Open directory.
+                System.Diagnostics.Process.Start( "explorer.exe", directoryPath );
+
+            }
 
         }
 

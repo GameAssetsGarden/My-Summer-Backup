@@ -24,6 +24,7 @@ namespace My_Summer_Backup{
         public MainWindow(){
 
             InitializeComponent();
+            this.Title += " - v2017.4.5.1(Beta)"; // Append program version number.
             updateBackupList(); // Update the list of backup folders on program load.
         }
 
@@ -72,6 +73,18 @@ namespace My_Summer_Backup{
             for( int i = 0; i < numBackups; i++ ) {
                 fileNameListBox.Items.Add( backupFolderList[i] );
             }
+        }
+
+        private void openMySummerCarFolder( object sender, RoutedEventArgs e ) {
+
+            FileManager.OpenDirectory( FileManager.gameDataDirectory );
+
+        }
+
+        private void openBackupFolder( object sender, RoutedEventArgs e ) {
+
+            FileManager.OpenDirectory( FileManager.backupDirectory );
+
         }
     }
 
