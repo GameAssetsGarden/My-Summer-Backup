@@ -5,16 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:My_Summer_Backup"
         mc:Ignorable="d"
-        Title="My Summer Backup" Width="600" d:DesignHeight="681.6">
+        Title="My Summer Backup - vXXXX.X.XX.X" Width="600" d:DesignHeight="681.6">
     <Grid>
-        <Button x:Name="openMySummerCarFolderButton" Content="Open My Summer Car Folder" Margin="6,10,0,0" VerticalAlignment="Top" Width="184" Height="26" HorizontalAlignment="Left" Cursor="Hand" Click="openMySummerCarFolder"/>
-        <Button x:Name="openBackupFolderButton" Content="Open Backup Folder" Margin="210,10,0,0" VerticalAlignment="Top" Width="136" Height="26" HorizontalAlignment="Left" Cursor="Hand" Click="openBackupFolder"/>
-        <Button x:Name="createBackupButton" Content="Create Backup" Margin="6,58,0,0" VerticalAlignment="Top" Width="106" Height="26" HorizontalAlignment="Left" Cursor="Hand" Click="createBackup"/>
-        <TextBox x:Name="fileNameTextBox" Height="26" Margin="132,58,5.6,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <Button x:Name="loadBackupButton" Content="Load Backup" HorizontalAlignment="Left" Margin="6,107,0,0" VerticalAlignment="Top" Width="106" Height="26" Cursor="Hand" Click="loadBackup"/>
-        <ListBox x:Name="fileNameListBox" Margin="6,160,5.6,5.6" VerticalContentAlignment="Top">
+        <Button x:Name="createBackupButton" Content="Create Backup" Margin="6,43,0,0" VerticalAlignment="Top" Width="106" Height="26" HorizontalAlignment="Left" Cursor="Hand" Click="createBackup"/>
+        <TextBox x:Name="fileNameTextBox" Height="26" Margin="132,43,5.6,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <Button x:Name="loadBackupButton" Content="Load Backup" HorizontalAlignment="Left" Margin="6,94,0,0" VerticalAlignment="Top" Width="106" Height="26" Cursor="Hand" Click="loadBackup"/>
+        <ListBox x:Name="fileNameListBox" Margin="6,143,5.6,5.6" VerticalContentAlignment="Top">
             <ListBoxItem Content="No Backups Found" Height="21" Cursor="Hand"/>
         </ListBox>
-        <TextBox x:Name="backupStatusTextBox" Height="26" Margin="132,109,5.6,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBox x:Name="backupStatusTextBox" Height="26" Margin="132,94,5.6,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <DockPanel LastChildFill="False" VerticalAlignment="Top" Margin="0,0,-0.4,0">
+            <DockPanel.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuBarColorKey}}"/>
+            </DockPanel.Background>
+            <Menu x:Name="File" VerticalAlignment="Top">
+                <MenuItem Header="File">
+                    <MenuItem Header="Open MSC Folder" Click="openMySummerCarFolder"/>
+                    <MenuItem Header="Open Backup Folder" Click="openBackupFolder"/>
+                </MenuItem>
+            </Menu>
+            <Menu x:Name="Resources">
+                <MenuItem Header="Resources">
+                    <MenuItem Header="Buy My Summer Car (Steam)" HorizontalAlignment="Left" Click="buyMySummerCar"/>
+                    <MenuItem Header="My Summer Car Community (Steam)" HorizontalAlignment="Left" Click="openMySummerCarCommunity"/>
+                    <MenuItem Header="My Summer Car Official Website" HorizontalAlignment="Left" Click="openMySummerCarWebsite"/>
+                    <MenuItem Header="My Summer Backup Program Releases" HorizontalAlignment="Left" Click="openProgramReleases"/>
+                    <MenuItem Header="My Summer Backup Source Code (GitHub)" HorizontalAlignment="Left" Click="openSourceCode"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
     </Grid>
 </Window>

@@ -13,17 +13,28 @@ namespace My_Summer_Backup{
         public static bool   DELETE_CONTENTS   = true;
         public static string gameDataDirectory = @"%USERPROFILE%\AppData\LocalLow\Amistech\My Summer Car";
         public static string backupDirectory   = @"My Summer Backups\";
-        public static string NO_BACKUPS_FOUND  = "No Backups Found";
-        public static string DIR_NOT_FOUND     = "The selected folder could not be found.";
-        public static string SELECT_BACKUP     = "Select Backup Folder";
-        public static string SELECT_BACKUP_MSG = "Select a backup folder first.";
-        public static string BACKUP_LOADED_MSG = " has been loaded."; // Append backup folder name to the beginning of this string.
+        public const string  GIT_SOURCE_REPO   = "https://github.com/ProcureEminence/My-Summer-Backup/tree/master/Source%20Code";
+        public const string  GIT_PROG_RELEASES = "https://github.com/ProcureEminence/My-Summer-Backup/releases";
+        public const string  MSC_STEAM         = "http://store.steampowered.com/app/516750/";
+        public const string  MSC_COMMUNITY     = "http://steamcommunity.com/app/516750/";
+        public const string  MSC_WEBSITE       = "http://www.amistech.com/msc/";
+        public const string  NO_BACKUPS_FOUND  = "No Backups Found";
+        public const string  DIR_NOT_FOUND     = "The selected folder could not be found.";
+        public const string  SELECT_BACKUP     = "Select Backup Folder";
+        public const string  SELECT_BACKUP_MSG = "Select a backup folder first.";
+        public const string  BACKUP_LOADED_MSG = " has been loaded."; // Append backup folder name to the beginning of this string.
 
         // Used to expand environment variables within a path. EX: %USERPROFILE%
         public static string ExpandPath( string initialPath ){
 
             string fullPath = Environment.ExpandEnvironmentVariables( initialPath );
             return fullPath;
+
+        }
+
+        public static void OpenWebsite( string url ) {
+
+            System.Diagnostics.Process.Start( url );
 
         }
 
@@ -42,6 +53,37 @@ namespace My_Summer_Backup{
 
                 // Open directory.
                 System.Diagnostics.Process.Start( "explorer.exe", directoryPath );
+
+            }
+
+        }
+
+        public static bool CreateDirectory( string directoryPath ){
+
+            directoryPath = ExpandPath( directoryPath );
+
+            // Only create directory if it doesn't exist.
+            if( !Directory.Exists( directoryPath ) ){
+
+                Directory.CreateDirectory( directoryPath );
+
+                // Check if directory was successfully created.
+                if( !Directory.Exists( directoryPath ) ){
+
+                    // Directory could not be created.
+                    return false;
+
+                }else{
+
+                    // Directory was created successfully.
+                    return true;
+
+                }
+
+            }else{
+
+                // Directory already exists.
+                return false;
 
             }
 

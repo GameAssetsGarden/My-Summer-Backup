@@ -1,20 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace My_Summer_Backup{
+namespace My_Summer_Backup {
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,7 +11,8 @@ namespace My_Summer_Backup{
         public MainWindow(){
 
             InitializeComponent();
-            this.Title += " - v2017.4.5.1(Beta)"; // Append program version number.
+            this.Title += " - v2017.4.13.1(Beta)"; // Append program version number.
+            FileManager.CreateDirectory( FileManager.backupDirectory );
             updateBackupList(); // Update the list of backup folders on program load.
         }
 
@@ -84,6 +72,36 @@ namespace My_Summer_Backup{
         private void openBackupFolder( object sender, RoutedEventArgs e ) {
 
             FileManager.OpenDirectory( FileManager.backupDirectory );
+
+        }
+
+        private void openSourceCode( object sender, RoutedEventArgs e ) {
+
+            FileManager.OpenWebsite( FileManager.GIT_SOURCE_REPO );
+
+        }
+
+        private void openProgramReleases( object sender, RoutedEventArgs e ) {
+
+            FileManager.OpenWebsite( FileManager.GIT_PROG_RELEASES );
+
+        }
+
+        private void buyMySummerCar( object sender, RoutedEventArgs e ) {
+
+            FileManager.OpenWebsite( FileManager.MSC_STEAM );
+
+        }
+
+        private void openMySummerCarCommunity( object sender, RoutedEventArgs e ) {
+
+            FileManager.OpenWebsite( FileManager.MSC_COMMUNITY );
+
+        }
+
+        private void openMySummerCarWebsite( object sender, RoutedEventArgs e ) {
+
+            FileManager.OpenWebsite( FileManager.MSC_WEBSITE );
 
         }
     }
