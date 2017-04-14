@@ -13,7 +13,7 @@ namespace My_Summer_Backup{
         public static bool   DELETE_CONTENTS   = true;
         public static string gameDataDirectory = @"%USERPROFILE%\AppData\LocalLow\Amistech\My Summer Car";
         public static string backupDirectory   = @"My Summer Backups\";
-        public const string  GIT_SOURCE_REPO   = "https://github.com/ProcureEminence/My-Summer-Backup/tree/master/Source%20Code";
+        public const string  GIT_SOURCE_REPO   = "https://github.com/ProcureEminence/My-Summer-Backup";
         public const string  GIT_PROG_RELEASES = "https://github.com/ProcureEminence/My-Summer-Backup/releases";
         public const string  MSC_STEAM         = "http://store.steampowered.com/app/516750/";
         public const string  MSC_COMMUNITY     = "http://steamcommunity.com/app/516750/";
