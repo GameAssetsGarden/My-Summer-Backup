@@ -11,7 +11,7 @@ namespace My_Summer_Backup {
         public MainWindow(){
 
             InitializeComponent();
-            this.Title = "My Summer Backup - v2017.4.14.1"; // Append program version number.
+            this.Title = "My Summer Backup - v2017.4.14.2"; // Append program version number.
             FileManager.CreateDirectory( FileManager.backupDirectory );
             updateBackupList(); // Update the list of backup folders on program load.
         }
